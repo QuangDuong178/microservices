@@ -4,11 +4,9 @@ spring:
   application:
     name:
       DEPARTMENT-SERVICE
-  activemq:
-    broker-url:
   rabbitmq:
     host: localhost
-    port: 9876
+    port: 5672
     username: guest
     password: guest
 eureka:
@@ -17,7 +15,11 @@ eureka:
       serverUrl:
         defaultZone=http://localhost:8761/eureka/
 management:
-  endpoints:
-    web:
-      exposure:
-        include=*:
+  tracing:
+    sampling:
+      probability: 1.0
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG

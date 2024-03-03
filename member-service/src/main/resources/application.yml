@@ -6,7 +6,7 @@ spring:
       optional:configserver:http://localhost:8888
   rabbitmq:
     host: localhost
-    port: 9876
+    port: 5672
     username: guest
     password: guest
 eureka:
@@ -16,3 +16,13 @@ eureka:
         defaultZone=http://localhost:8761/eureka/
 server:
   port: 8082
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+
